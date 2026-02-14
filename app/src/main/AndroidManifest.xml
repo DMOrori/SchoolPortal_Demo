@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SchoolPortal">
         <activity
+            android:name=".DeanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
