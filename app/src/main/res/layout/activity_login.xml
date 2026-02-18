@@ -5,83 +5,75 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F6F7"
     tools:context=".LoginActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="22dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Name"
-            android:id="@+id/etName"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etPassword"
-            android:inputType="textPassword"
-            android:hint="Enter Password"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnLogin"
-            android:text="Login" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnLogout"
-            android:text="Logout"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_logo"
+            android:contentDescription="School Logo" />
 
         <TextView
             android:id="@+id/tvHeader"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mnp_Portal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#1A5276"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"/>
 
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/etLoginName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="55dp"
+            android:hint="Username"
+            android:background="@android:drawable/editbox_background"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etLoginPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Password" />
-
-        <TextView
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email" />
+            android:layout_height="55dp"
+            android:hint="Password"
+            android:background="@android:drawable/editbox_background"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="24dp"
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Login"
+            android:backgroundTint="#1A5276"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvGoToRegister"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:text="Don't have an account? Register"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#1A5276"
+            android:textStyle="bold"/>
+
     </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

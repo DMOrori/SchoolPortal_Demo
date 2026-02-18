@@ -5,41 +5,83 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="22dp">
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"/>
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/etUsername"
-            android:hint="Enter name" />
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Full Name"
+            android:background="@android:drawable/editbox_background"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/etEmail"
-            android:hint="enter Email"/>
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Email Address"
+            android:background="@android:drawable/editbox_background"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="textEmailAddress"/>
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/etPassword"
-            android:hint="enter your password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Password"
+            android:background="@android:drawable/editbox_background"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="24dp"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Confirm Password"
+            android:background="@android:drawable/editbox_background"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="24dp"
             android:inputType="textPassword"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/btnRegister"
-            android:text="Register"/>
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Register"
+            android:textSize="18sp"
+            android:textAllCaps="false"/>
 
+        <TextView
+            android:id="@+id/tvLoginLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? Login"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/design_default_color_primary"/>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
