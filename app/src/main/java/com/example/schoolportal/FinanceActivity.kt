@@ -1,20 +1,38 @@
 package com.example.schoolportal
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class FinanceActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_finance)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Initialize Views
+        val etStudentId = findViewById<EditText>(R.id.etStudentFeeId)
+        val etAmount = findViewById<EditText>(R.id.etAmount)
+        val btnPay = findViewById<Button>(R.id.btnProcessPayment)
+
+        btnPay.setOnClickListener {
+            val studentId = etStudentId.text.toString()
+            val amount = etAmount.text.toString()
+
+            if (studentId.isNotEmpty() && amount.isNotEmpty()) {
+                // Logic for processing (for now, just a Toast)
+                Toast.makeText(this, "Processing $amount for Student $studentId", Toast.LENGTH_LONG).show()
+
+                // Clear fields
+                etStudentId.text.clear()
+                etAmount.text.clear()
+            } else {
+                Toast.makeText(this, "Please fill in all details", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

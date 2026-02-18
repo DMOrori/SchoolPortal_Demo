@@ -20,16 +20,29 @@ class RegisterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val etName = findViewById<EditText>(R.id.etName)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
+   val etUsername = findViewById<EditText>(R.id.etUsername)
         val etEmail = findViewById<EditText>(R.id.etEmail)
-        btnRegister.setOnClickListener {
-            Toast.makeText(this,"Registration successfull",Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
+        val btnRegister = findViewById<Button>(R.id.btnRegister)
 
-            finish()
+        btnRegister.setOnClickListener{
+            val username = etUsername.text.toString()
+            val email = etEmail.text.toString()
+            val password = etPassword.text.toString()
+
+            if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()){
+
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.putExtra("username", username)
+                intent.putExtra("email", email)
+                intent.putExtra("password", password)
+                startActivity(intent)
+                Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+
+            }
+
         }
     }
 }

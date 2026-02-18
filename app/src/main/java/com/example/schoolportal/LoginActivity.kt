@@ -1,13 +1,8 @@
 package com.example.schoolportal
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.ViewUtils
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -21,12 +16,5 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-val etName = findViewById<EditText>(R.id.etName)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnLogout = findViewById<Button>(R.id.btnLogout)
-        Toast.makeText(this,"Login Successfully",Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
     }
 }
